@@ -11,11 +11,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():  # put application's code here
-    return 'Hello World!'
+    return 'Hello from Min!'
 
 @app.route('/searchScrape',methods=["Get","POST"])
 def search_scrape():
     search_keyword = request.form.get("searchKeyword")
+    console.log(f"Keyword: {keyword}" )
 
     chrome_options = webdriver.ChromeOptions()
 
@@ -24,7 +25,7 @@ def search_scrape():
     chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 
     # to run the script locally, uncomment the line below. Don't forget to set up your chrome driver
-    # chrome_options.binary_location = "C:\Program Files\Google\Chrome Beta\Application\chrome.exe"
+    chrome_options.binary_location = "C:\Program Files\Google\Chrome Beta\Application\chrome.exe"
 
     # to visualize the scraping process comment out the linebelow
     chrome_options.add_argument("--headless")
