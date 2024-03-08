@@ -33,8 +33,8 @@ def search_scrape():
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument('--window-size=1920,1080')
-    browser = webdriver.Chrome()
-    browser = webdriver.Chrome( options=chrome_options)
+
+    browser = webdriver.Chrome(executable_path=path,options=chrome_options)
     wait = WebDriverWait(browser, 5)
     browser.get("https://www.myer.com.au/")
 
