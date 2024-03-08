@@ -5,8 +5,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import os
 from selenium.webdriver.support import expected_conditions as EC
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app, origins='*', supports_credentials=True, methods=['GET', 'POST', 'OPTIONS'],
+     allow_headers=['Origin', 'Content-Type', 'Accept'])
+
 
 
 @app.route('/')
