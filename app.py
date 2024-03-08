@@ -91,7 +91,7 @@ def search_scrape():
     #     except:
     #         next_button_present = False
     #     print(f"Next Button present: {next_button_present}")
-
+    #
     print(len(scraped_products))
     return jsonify(scraped_products),200
 
