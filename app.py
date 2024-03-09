@@ -20,7 +20,10 @@ def main():  # put application's code here
 
 @app.route('/searchScrape',methods=["Get","POST"])
 def search_scrape():
-    search_keyword = request.form.get("searchKeyword")
+    if request.method == "POST": 
+         search_keyword = request.form.get("searchKeyword")
+    elif request.method == "GET":
+         search_keyword = "banana"
     print("Search keyword"+search_keyword)
 
     chrome_options = webdriver.ChromeOptions()
